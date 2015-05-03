@@ -198,7 +198,32 @@
 					
 					<div class="second-menu">
 						
-						<img data-src="images/menu-2.jpg">
+						<img src="images/menu-2.jpg">
+						
+					</div>
+					
+					<div class="second-menu-2">
+						<header>
+							<a href="javascript:void(0)" class="opennav icon-menu">Menu</a>
+						</header>
+						
+					
+							<nav class="subnav">
+								<div class="bgclick">
+									<a href="http://www.tiennghicuocsong.vn/"><i class="icon-mobile"></i>Điện thoại</a>
+									<a href="#"><i class="icon-tablet"></i>Tablet</a>
+									<a href="#"><i class="icon-laptop"></i>Laptop</a>
+									<a href="#"><i class="icon-phukien"></i>Phụ kiện</a>
+									<a href="#"><i class="icon-maydoitra"></i>Máy đổi trả</a>
+									<a href="#"><i class="icon-simcard"></i>Sim, thẻ</a>
+									<a href="#"><i class="icon-gameapp"></i>Game, App</a>
+									<a href="#"><i class="icon-news"></i>Tin mới</a>
+									<a href="#"><i class="icon-promo"></i>Khuyến mãi</a>
+									<a href="#"><i class="icon-hdap"></i>Hỏi đáp </a>
+									<a href="#"><i class="icon-dmusic"></i>Tải nhạc</a>
+									<a href="#"><i class="icon-raovat"></i>Rao vặt</a>
+								</div>
+							</nav>
 						
 					</div>
 
@@ -427,6 +452,7 @@
 	<script>
 		jQuery(document).ready(function ($) {
 			 $('.second-menu').scrollToFixed();
+			 $('.second-menu-2').scrollToFixed();
 		});
 	</script>
 
@@ -500,13 +526,9 @@
 		
 		jQuery(document).ready(function($) {
 		
-			function t() {
-				$(".subnav").height() >= n.height() ? $(".subnav").height(n.height() - 46).addClass("autoscroll") : $(".subnav").height(n.height()).removeClass("autoscroll")
-			}
-			
 			function i() {
 				$(".opennav").addClass("icon-menu").removeClass("icon-closemenu");
-				$(".subnav").hide(250).toggleClass("show");
+				$(".subnav").hide(250).toggleClass("show-subnav");
 				$("body").removeClass("fixbody")
 			}
 			
@@ -514,27 +536,20 @@
 			
 				n.stopPropagation();
 				
-				$(".subnav").addClass("show").toggle(150);
+				$(".subnav").addClass("show-subnav").show(150);
 				
 				$(".opennav").hasClass("icon-menu") ? 
 					
-					($(this).addClass("icon-closemenu").removeClass("icon-menu"), $("body").addClass("fixbody")) : 
-					
-					($(this).addClass("icon-menu").removeClass("icon-closemenu"), 
-						$("body").removeClass("fixbody"), 
-						$(".subnav").hide(250).toggleClass("show"))
+				($(this).addClass("icon-closemenu").removeClass("icon-menu"), $("body").addClass("fixbody")) : 
+				
+				($(this).addClass("icon-menu").removeClass("icon-closemenu"), 
+				$("body").removeClass("fixbody"), 
+				$(".subnav").hide(250).toggleClass("show-subnav"))
 			});
 			
 			$(".subnav").click(function() {
 				i()
 			});
-			
-			var n = $(window);
-			
-			t();
-			
-			$(window).resize(t);
-			
 			
 		});	
 
